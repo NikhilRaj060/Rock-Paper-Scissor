@@ -1,0 +1,409 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    background-color: rgb(118, 196, 0);
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+p {
+    color: white;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.scoreboard{
+    color: #fff;
+    width: 775px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 13px;
+    border: 2px solid #fff;
+    margin-block: 40px;
+    margin-inline: 16px;
+}
+
+.gamename{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    padding-top: 6px;
+}
+
+.scorecard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.score_card {
+    width: 116px;
+    height: 116px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 24px;
+    text-align: center;
+}
+
+.score_card p:first-child{
+    color: #656565;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.score_card p:last-child{
+    color: #252525;
+    text-align: center;
+    font-size: 68px;
+    font-weight: 700;
+}
+
+.body {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rock_scissor{
+    display: flex;
+    align-items: center;
+}
+
+.line{
+    height: 20px;
+    width: 110px;
+    background-color: #324723;
+}
+
+.middlelines {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    gap: 25px;
+    z-index: -1;
+}
+
+.right_tilt{
+    height: 20px;
+    width: 170px;
+    background-color: #324723;
+    rotate: -60deg;
+}
+
+.left_tilt {
+    height: 20px;
+    width: 170px;
+    background-color: #324723;
+    rotate: 60deg;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 140px;
+    background-color: white;
+    border: 13px solid;
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 13px rgba(0, 0, 0, 0.35));
+    box-shadow: 3px 0px 21px 1px rgba(0, 0, 0, 0.2) inset;
+    cursor: pointer;
+}
+
+.scissors{
+    border-color: #BD00FF;
+}
+
+.hand{
+    border-color: #FFA943;
+}
+
+.rock {
+    border-color: #0074B6;
+}
+
+.paper{
+    padding-top: 80px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.result> p > span {
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 0.4rem
+}
+
+.result_box {
+    display: flex;
+    padding: 6rem;
+    padding-top: 4rem;
+    gap: 1.2rem ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected_option {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-weight: 600;
+    font-size: 1.0625rem;
+}
+
+#play_again_btn {
+    padding-inline: 2rem;
+    padding-block: 0.6rem;
+    background-color: white;
+    color: gray;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border: none;
+}
+
+.circle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.innermost {
+    width: 250px;
+    height: 250px;
+    background-color: #0d520d;
+    z-index: -1;
+}
+
+.inner {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(29, 168, 43, 0.79);
+}
+
+.outer {
+    width: 350px;
+    height: 350px;
+    background-color: rgba(29, 168, 43, 0.5);
+}
+
+.winnerIndicator {
+    position: absolute;
+    top: -20%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    background-color: transparent;
+    z-index: -1;
+}
+
+#userwiningIndicator, #computerwiningIndicator div {
+    animation: pulse 1.5s linear infinite;
+    animation-delay: calc(1.5s * var(--i)) linear infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    
+    50% {
+        transform: scale(0.75);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.btn {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.nextBtn {
+    display: none;
+}
+
+.ruleBtn , .nextBtn {
+    width: 115px;
+    height: 42px;
+    border: 2px solid#FFFFFF;
+    border-radius: 10px;
+    color:#FFFFFF;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.winnercontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 96px;
+}
+
+.starandcupimage {
+    position: relative;
+}
+
+.starandcupimage > .star{
+    width: 500px;
+    height: 300px;
+}
+
+.cup {
+    position: absolute;
+    bottom: 0;
+    left: 33%;
+    height: 200px;
+    width: 200px;
+}
+
+.winningText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    font-weight: 600;
+    line-height: 106px;
+    letter-spacing: 2px;
+    padding: 30px;
+    font-family: Roboto;
+}
+
+.winningTextUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 2px;
+    padding: 30px;
+    padding-top: 0px;
+    font-family: Roboto;
+}
+
+.ruleSection {
+    position: absolute;
+    width: 355px;
+    height: 400px;
+    bottom: 80px;
+    right: 2rem;
+}
+
+.crossbtnsection {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 5px solid white;
+    right: 0;
+    top: 10px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#crossbtn {
+    width: 20px;
+    height: 30px;
+}
+
+.rules {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    bottom: 0;
+    width: 340px;
+    height: 360px;
+    box-sizing: border-box;
+    border: 7px solid white;
+    border-radius: 10px;
+    background-color: #004429;
+}
+
+.rules > ul,
+.rules > h1 {
+    color: white;
+}
+
+ul {
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+ul > ul {
+    display:flex;
+    flex-direction: row;
+    list-style-type: square;
+    font-weight: bold;
+    padding: 0px 20px 10px 26px;
+}
+
+ul > li::marker {
+    color: #FFD600;
+    font-size: 2rem;
+}
+
+.rules > ul > li {
+    padding: 10px 10px 0px 10px;
+}

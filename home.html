@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="/index.js"></script>
+    <title>Rock Paper Scissors</title>
+  </head>
+      <div id="main">
+        <div class="container">
+          <div class="scoreboard">
+            <div class="gamename">
+              <p>Rock</p>
+              <p>Paper</p>
+              <p>Scissors</p>
+            </div>
+            <div class="scorecard">
+              <div class="score_card">
+                <p>YOUR SCORE</p>
+                <p id="your_score">0</p>
+              </div>
+              <div class="score_card">
+                <p>COMPUTER SCORE</p>
+                <p id="computer_score">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <div class="game">
+            <div class="rock_scissor">
+              <div class="card rock" id="rock" onclick="playGame('rock')">
+                <img src="/image/icons-rock.png" alt="rock"/>
+              </div>
+              <div class="line"></div>
+              <div class="card scissors" id="scissors" onclick="playGame('scissors')">
+                <img src="/image/icon-scissor.png" alt="scissors" />
+              </div>
+            </div>
+            <div class="middlelines">
+              <div class="line right_tilt"></div>
+              <div class="line left_tilt"></div>
+            </div>
+            <div class="paper">
+              <div class="card hand" id="paper" onclick="playGame('paper')">
+                <img src="/image/icon-paper.png" alt="paper" />
+              </div>
+            </div>
+          </div>
+          <div class="result_screen" style="display: none;">
+            <div class="result_box">
+              <div class="selected_option user">
+                <p>YOU PICKED</p>
+                <div class="card" id="user">
+                  <img src="" alt="dynamicImageUser" id="user_image"/>
+                </div>
+                <div id="userwiningIndicator" class="winnerIndicator">
+                  <div class="circle outer"></div>
+                  <div class="circle inner""></div>
+                  <div class="circle innermost"></div>
+                </div>
+              </div>
+              <div class="result">
+                <p>
+                  <span id="winner">YOU WON</span>
+                <br>
+                AGAINST PC
+                </p>
+                <button id="play_again_btn" onclick="playaAgain('replay')">PLAY AGAIN</button>
+              </div>
+              <div class="selected_option user">
+                <p>YOU PICKED</p>
+                <div class="card" id="computer">
+                  <img src="" alt="dynamicImageComputer" id="computer_image"/>
+                </div>
+                <div id="computerwiningIndicator" class="winnerIndicator">
+                  <div class="circle outer"></div>
+                  <div class="circle inner"></div>
+                  <div class="circle innermost"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ruleSection">
+          <div class="crossbtnsection" onclick="closerules()">
+            <img src="/image/X.png" alt="crossbtn" id="crossbtn">
+          </div>
+          <div class="rules">
+            <h1>Game Rule</h1>
+              <ul>
+                <ul>
+                  <li></li>
+                  <p>
+                    Rock beats scissors, scissors beat paper, and paper beats rock.
+                  </p>
+                </ul>
+                <ul>
+                  <li></li>
+                  <p>
+                    Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”
+                  </p>
+                </ul>
+                <ul>
+                  <li></li>
+                  <p>
+                    Use rock, paper, scissors to settle minor decisions or simply play to pass the time
+                  </p>
+                </ul>
+                <ul>
+                  <li></li>
+                  <p>If both players lay down the same hand, each player lays down another hand</p>
+                </ul>
+              </ul>
+          </div>
+      </div>
+      <div class="btn">
+        <button class="ruleBtn" id="ruleBtn" onclick="showRules()">RULES</button>
+        <button class="nextBtn" id="nextBtn" onclick="showWinner()">NEXT</button>
+      </div>
+      <div id="winnerpage" style="display: none;">
+        <div class="winnercontainer">
+          <div class="starandcupimage">
+            <img class="star" src="/image/stars.png" alt="star">
+            <img class="cup" src="/image/cup.png" alt="Cup">
+          </div>
+          <div class="winningText">
+            <p>
+              HURRAY!!
+            </p>
+          </div>
+          <div class="winningTextUser">
+            <p>
+              YOU WON THE GAME
+            </p>
+          </div>
+          <button id="play_again_btn" onclick="playaAgain('startAgain')">PLAY AGAIN</button>
+        </div>
+      </div>
+  </body>
+</html>
